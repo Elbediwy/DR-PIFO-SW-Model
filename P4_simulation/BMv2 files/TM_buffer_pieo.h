@@ -19,7 +19,7 @@
 
 #include "simple_switch.h"
 #include "register_access.h"
-#include </home/vagrant/tutorials/utils/user_externs_pieo/pieo.h>
+#include </home/vagrant/dr_pifo_simulation/utils/user_externs_pieo/pieo.h>
 
 std::vector<std::shared_ptr<bm::pieo_scheduler::flow_scheduler>> bm::pieo_scheduler::FS = { NULL};
 
