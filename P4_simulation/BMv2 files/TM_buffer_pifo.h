@@ -19,7 +19,7 @@
 
 #include "simple_switch.h"
 #include "register_access.h"
-#include </home/vagrant/tutorials/utils/user_externs_pifo/pifo.h>
+#include </home/vagrant/dr_pifo_simulation/utils/user_externs_pifo/pifo.h>
 
 std::vector<std::shared_ptr<bm::pifo_scheduler::flow_scheduler>> bm::pifo_scheduler::FS = { NULL};
 
