@@ -19,7 +19,7 @@
 
 #include "simple_switch.h"
 #include "register_access.h"
-#include </home/vagrant/tutorials/utils/user_externs_pFabric/pFabric.h>
+#include </home/vagrant/dr_pifo_simulation/utils/user_externs_pFabric/pFabric.h>
 
 std::vector<std::shared_ptr<bm::pFabric_scheduler::flow_scheduler>> bm::pFabric_scheduler::FS = { NULL};
 
