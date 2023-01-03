@@ -9,6 +9,10 @@ Optional : you can find these tools installed in the provided VM from https://gi
 3. Copy the files provided in "P4_simulation/BMv2 Files/" to the directory of the simple_switch in your system "behavioral-model/targets/simple_switch" (replace the already existed files, if needed)
 
 4. In "behavioral-model/targets/simple_switch/simple_switch.cpp", for the lines from 42-45, include only the model of the packet scheduler that you would like to test.
+https://github.com/Elbediwy/DR-PIFO-SW-Model/blob/0388caaab889b33689a67d131f58b0db828faf32/P4_simulation/BMv2%20files/simple_switch.cpp#L42
+https://github.com/Elbediwy/DR-PIFO-SW-Model/blob/0388caaab889b33689a67d131f58b0db828faf32/P4_simulation/BMv2%20files/simple_switch.cpp#L43
+https://github.com/Elbediwy/DR-PIFO-SW-Model/blob/0388caaab889b33689a67d131f58b0db828faf32/P4_simulation/BMv2%20files/simple_switch.cpp#L44
+https://github.com/Elbediwy/DR-PIFO-SW-Model/blob/0388caaab889b33689a67d131f58b0db828faf32/P4_simulation/BMv2%20files/simple_switch.cpp#L45
 
 For example, if you uncommented only "#include "TM_buffer_dr_pifo.h"", so you will use the DR-PIFO packet scheduler model in the BMv2 model. 
 
