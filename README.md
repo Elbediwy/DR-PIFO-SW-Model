@@ -47,7 +47,7 @@ sudo make
 
 10. Then, wait until the simulation is finished. (~ 30 mins)
 
-You can find the log files of each switch in "P4_simulation/utils/program/qos/logs"
-You can also find the received packets by each host in "P4_simulation/utils/program/qos/receiver_h'#host_id'"
+You can find the log files of each switch in "P4_simulation/utils/program/qos/logs". 
+You can also find the received packets by each host in "P4_simulation/utils/program/qos/receiver_h'#host_id'".
 
 11. To test other models, such as PIFO or PIEO or Ideal pFabric, repeat the steps from 4 to 10, with changing "DR-PIFO" to "pFabric" in each step.
