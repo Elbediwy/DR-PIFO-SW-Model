@@ -34,6 +34,7 @@ sudo make
 ```
 
 7. For the DR-PIFO, in the "P4_simulation/utils/user_externs_dr_pifo/p4runtime_switch.py", uncomment the line refers to the folder "user_externs_dr_pifo", from line 122 to 125 (which is 122 for the DR-PIFO).
+https://github.com/Elbediwy/DR-PIFO-SW-Model/blob/b88fd6fc40f6be9bc4f5cdf3900e296deb58cd5a/P4_simulation/utils/p4runtime_switch.py#L122-L125
 
 8. For the DR-PIFO, copy the content of the file "P4_simulation/utils/program/qos/p4 programs/DR_PIFO.p4" to this file "P4_simulation/utils/program/qos/qos.p4"
 
@@ -47,7 +48,6 @@ sudo make
 10. Then, wait until the simulation is finished. (~ 30 mins)
 
 You can find the log files of each switch in "P4_simulation/utils/program/qos/logs"
-
 You can also find the received packets by each host in "P4_simulation/utils/program/qos/receiver_h'#host_id'"
 
 11. To test other models, such as PIFO or PIEO or Ideal pFabric, repeat the steps from 4 to 10, with changing "DR-PIFO" to "pFabric" in each step.
