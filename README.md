@@ -9,6 +9,7 @@ Optional : you can find these tools installed in the provided VM from https://gi
 3. Copy the files provided in "P4_simulation/BMv2 Files/" to the directory of the simple_switch in your system "behavioral-model/targets/simple_switch" (replace the already existed files, if needed)
 
 4. In "behavioral-model/targets/simple_switch/simple_switch.cpp", for the lines from 42-45, include only the model of the packet scheduler that you would like to test.
+
 For example, if you uncommented only "#include "TM_buffer_dr_pifo.h"", so you will use the DR-PIFO packet scheduler model in the BMv2 model. 
 
 5. In the directory of BMv2 "behavioral-model/", run these commands : 
@@ -36,8 +37,10 @@ sudo make stop
 sudo make clean
 sudo make
 
-10. Then, wait until the simulation is finished. (~ 30 mins) 
+10. Then, wait until the simulation is finished. (~ 30 mins)
+
 You can find the log files of each switch in "P4_simulation/utils/program/qos/logs"
+
 You can also find the received packets by each host in "P4_simulation/utils/program/qos/receiver_h'#host_id'"
 
 11. To test other models, such as PIFO or PIEO or Ideal pFabric, repeat the steps from 4 to 10, with changing "DR-PIFO" to "pFabric" in each step.
