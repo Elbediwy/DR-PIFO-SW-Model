@@ -13,29 +13,35 @@ Optional : you can find these tools installed in the provided VM from https://gi
 For example, if you uncommented only "#include "TM_buffer_dr_pifo.h"", so you will use the DR-PIFO packet scheduler model in the BMv2 model. 
 
 5. In the directory of BMv2 "behavioral-model/", run these commands : 
+```bash
 ./autogen.sh
 ./configure
 sudo make
 sudo make install
 sudo ldconfig
-
+```
 optional, in "behavioral-model/targets/simple_switch" and "behavioral-model/targets/simple_switch_grpc", you can run these commands:
+```bash
 sudo make
 sudo make install
 sudo ldconfig
-
+```
 6. For the DR-PIFO, in the "P4_simulation/utils/user_externs_dr_pifo/", run these commands : 
+```bash
 sudo make clean
 sudo make
+```
 
 7. For the DR-PIFO, in the "P4_simulation/utils/user_externs_dr_pifo/p4runtime_switch.py", uncomment the line refers to the folder "user_externs_dr_pifo", from line 122 to 125 (which is 122 for the DR-PIFO).
 
 8. For the DR-PIFO, copy the content of the file "P4_simulation/utils/program/qos/p4 programs/DR_PIFO.p4" to this file "P4_simulation/utils/program/qos/qos.p4"
 
 9. In "P4_simulation/utils/program/qos/", run these commands :
+```bash
 sudo make stop
 sudo make clean
 sudo make
+```
 
 10. Then, wait until the simulation is finished. (~ 30 mins)
 
