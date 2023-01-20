@@ -29,7 +29,7 @@ unsigned int bm::pifo_scheduler::time_now = 0;
 unsigned int bm::pifo_scheduler::number_levels = 1;
 
 std::vector<unsigned int> bm::pifo_scheduler::number_of_queues_per_level = {1};
-std::vector<unsigned int> bm::pifo_scheduler::number_of_pkts_per_queue_each_level = {3000};
+std::vector<unsigned int> bm::pifo_scheduler::number_of_pkts_per_queue_each_level = {1000};
 
 unsigned int sum_all_queues = bm::pifo_scheduler::number_of_queues_per_level[0];
 
