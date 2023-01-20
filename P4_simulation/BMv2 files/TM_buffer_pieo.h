@@ -29,7 +29,7 @@ unsigned int bm::pieo_scheduler::time_now = 0;
 unsigned int bm::pieo_scheduler::number_levels = 1;
 
 std::vector<unsigned int> bm::pieo_scheduler::number_of_queues_per_level = {1};
-std::vector<unsigned int> bm::pieo_scheduler::number_of_pkts_per_queue_each_level = {1024};
+std::vector<unsigned int> bm::pieo_scheduler::number_of_pkts_per_queue_each_level = {80};
 
 unsigned int sum_all_queues = bm::pieo_scheduler::number_of_queues_per_level[0];
 
