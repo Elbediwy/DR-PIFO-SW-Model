@@ -148,51 +148,29 @@ control MyIngress(inout headers hdr,
 
     register<bit<48>>(1) register_last_ptr;
     register<bit<48>>(1024) flows_min_rank;
-    bit <48> in_flow_id;
+    bit <48> in_flow_id = 0;
+
+    action assign_flow_id(bit <48> flow_id) {
+        in_flow_id = flow_id;
+    }
+
+
+    table lookup_flow_id {
+        key = {
+            hdr.ipv4.srcAddr: lpm;
+        }
+        actions = {
+            assign_flow_id;
+            NoAction;
+        }
+        size = 1024;
+        default_action = NoAction();
+    }
 
     apply {
 
-    if((bit<48>)(hdr.ipv4.srcAddr) == 0)
-    {
-        hdr.ipv4.srcAddr = (bit<32>)(167772417);
-    }        
+        lookup_flow_id.apply();
 
-    if((bit<48>)(hdr.ipv4.srcAddr) < 167772672)
-    {
-        in_flow_id = (bit<48>)hdr.ipv4.srcAddr - 167772416;
-    }
-    else if((bit<48>)(hdr.ipv4.srcAddr) < 167772928)
-    {
-        in_flow_id = (bit<48>)hdr.ipv4.srcAddr - 167772416 - 200;
-    }
-    else if((bit<48>)(hdr.ipv4.srcAddr) < 167773184)
-    {
-        in_flow_id = (bit<48>)hdr.ipv4.srcAddr - 167772416 - 400;
-    }
-    else if((bit<48>)(hdr.ipv4.srcAddr) < 167773440)
-    {
-        in_flow_id = (bit<48>)hdr.ipv4.srcAddr - 167772416 - 600;
-    }
-    else if((bit<48>)(hdr.ipv4.srcAddr) < 167773696)
-    {
-        in_flow_id = (bit<48>)hdr.ipv4.srcAddr - 167772416 - 800;
-    }
-    else if((bit<48>)(hdr.ipv4.srcAddr) < 167773952)
-    {
-        in_flow_id = (bit<48>)hdr.ipv4.srcAddr - 167772416 - 1000;
-    }
-    else if((bit<48>)(hdr.ipv4.srcAddr) < 167774208)
-    {
-        in_flow_id = (bit<48>)hdr.ipv4.srcAddr - 167772416 - 1200;
-    }
-    else if((bit<48>)(hdr.ipv4.srcAddr) < 167774464)
-    {
-        in_flow_id = (bit<48>)hdr.ipv4.srcAddr - 167772416 - 1400;
-    }
-    else 
-    {
-        in_flow_id = (bit<48>)hdr.ipv4.srcAddr - 167772416 - 1600;
-    }
         register_last_ptr.read(in_pkt_ptr,0);
         in_pkt_ptr = in_pkt_ptr + (bit<48>)(1);
         register_last_ptr.write(0,in_pkt_ptr);
